@@ -1,0 +1,243 @@
+@font-face {
+  font-family: "SWCrawlBodyRegular";
+  src: url("../fonts/swcrawlbody-webfont.eot");
+  src: url("../fonts/swcrawlbody-webfont.eot?#iefix") format("embedded-opentype"), 
+       url("../fonts/swcrawlbody-webfont.woff") format("woff"), 
+       url("../fonts/swcrawlbody-webfont.ttf") format("truetype"), 
+       url("../fonts/swcrawlbody-webfont.svg#SWCrawlBodyRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+#intro,
+#crawling-txt,
+.episode,
+.subtitle {
+  font-family: "SWCrawlBodyRegular";
+}
+
+html {
+  color: #e5b13a;
+  font-family: arial, sans;
+  width: 100%;
+  overflow: hidden;
+}
+
+#loading {
+  position: fixed;
+  top: 45%;
+  left: 45%;
+  font-size: 30px;
+  color: #fff;
+  animation: blink 0.7s alternate infinite;
+  z-index: 10000;
+}
+
+.bg {
+  background: black url(../images/stars.jpg) repeat;
+  width: 100%;
+  height: 3000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+}
+.deathstar {
+  background: black url(../images/deathstar.png) no-repeat;
+  width: 655px;
+  height: 663px;
+  position: absolute;
+  bottom: 150px;
+  right: 100px;
+}
+
+#wrapper {
+  width: 500px;
+  margin: auto;
+}
+
+.box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border: 1px solid #bebebe;
+  color: #fff;
+  padding: 15px 20px;
+  width: 190px;
+  opacity: 0.2;
+  background: #000;
+  z-index: 1000;
+  transition: opacity 1s ease-in-out;
+}
+
+.box:hover {
+  opacity: 1;
+}
+
+.controls {
+  top: 20px;
+  right: 20px;
+  left: auto;
+}
+
+a {
+  background: #fff;
+  color: #000;
+}
+
+#intro {
+  font-size: 50px;
+  margin: 40% auto 0;
+  position: relative;
+  z-index: 999;
+  color: #4bd5ee;
+  width: 680px;
+  opacity: 0;
+}
+
+#main-title {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  z-index: 9;
+  text-align: center;
+  visibility: hidden;
+  transform: scale(2, 2);
+}
+
+#crawling-txt {
+  position: absolute;
+  bottom: 0%;
+  width: 470px;
+  z-index: 9999;
+  perspective: 250px;
+  transform-origin: 50% 50%;
+  transform-style: preserve-3d;
+}
+
+.text {
+  transform: rotateX(55deg);
+  z-index: 10000;
+}
+
+.episode,
+.subtitle {
+  text-align: center;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.episode {
+  margin-bottom: 10px;
+}
+
+.inner-txt {
+  transform: translate3d(0, 840px, 0);
+  line-height: 45px;
+  font-size: 37px;
+  text-align: justify;
+  height: 100%;
+}
+
+/* Animation definitions 
+ * The "running" class is added to the body element once the audio is pre-loaded
+ * and ready to be played by the browser. At that point we can add the css animations
+ * and start them.
+*/
+.running .bg {
+  animation: scrolldown 7s 88s forwards;
+}
+.running .inner-txt {
+  animation: swtxt 287s 19s cubic-bezier(0.25, 0.25, 0.815, 0.995);
+}
+.running #main-title {
+  animation: maintitle 12s 13.1s forwards;
+}
+.running #intro {
+  animation: fadeoutIntro 8s 4s forwards;
+}
+.running #loading {
+  display: none;
+  animation: none;
+}
+
+@keyframes maintitle {
+  0% {
+    visibility: visible;
+  }
+
+  10% {
+    transform: scale(100%);
+  }
+
+  15% {
+    transform: scale(100%);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes swtxt {
+  20% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, -5000px, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeoutIntro {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scrolldown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-68%);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.csstransforms3d #supported,
+.audio #supported,
+.running #supported,
+#unsupported {
+  display: block;
+}
+
+.csstransforms3d #unsupported,
+.audio #unsupported,
+#supported {
+  display: none;
+}

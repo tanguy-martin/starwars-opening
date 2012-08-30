@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" media="screen" href="css/styles.css" />
+        <script src="lib/modernizr.custom.96959.js"></script>
+        <script src="lib/prefixfree.min.js"></script>
+    </head>
+    <body>
+        <div id="loading">Loading...</div>
+        <div id="supported">
+            <div class="bg">
+                <div class="deathstar"></div>
+            </div>
+            <div id="main-title"><img src="images/logo.svg" /></div>
+            <div class="box">   
+                <h1>STARWARS OPENING - CSS3 & HTML5</h1>
+                <a href="http//">Github repository</a><br />
+                <a href="https://twitter.com/intent/tweet?text=Starwars%20opening%20animation%20in%20%23CSS3%20%26%20%23HTML5&url=http%3A%2F%2Ftanguymartin.com%2Fdemos%2Fstarwars%2F&via=tanguy_martin" target="_blank">Tweet about it!</a>
+            </div>
+            <div id="wrapper">
+                <div id="intro">A long time ago, in a galaxy far, far, away....</div>
+                <div id="crawling-txt">
+                    <div class="text">
+                        <div class="inner-txt">
+                            <p class="episode">Episode IV</p>
+                            <p class="subtitle">A new hope</p>
+                            <p>It is a period of civil war. Rebel spaceships, striking from 
+                            a hidden base, have won their first victory 
+                            against the evil Galactic Empire.</p>
+                            <p>During the battle, Rebel spies managed to steal secret plans to the
+                            Empire's ultimate weapon, the DEATH STAR, an armored space station
+                            with enough power to destroy an entire planet.</p>
+                            <p>Pursued by the Empire's sinister agents, Princess Leia races home
+                            aboard her starship, custodian of the stolen plans that can save her
+                            people and restore freedom to the galaxy....</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="unsupported">Your browser doesn't seem to support CSS 3D transforms or HTML5 audio. </div>
+        <script>
+            /**
+             * This snippet of JS code takes care of the preloading of the audio files
+             * and start the animation once the browser is ready to play
+             * the audio. That way we are sure that the audio is in sync
+             * with the animation.
+             *
+             * If the browser cannot play audio files, the animation won't run.
+            **/
+            (function() {
+                var audio = document.createElement('audio'),
+                    done = function(classname) {
+                        document.body.className = classname;
+                    };
+
+                if (audio == null || !audio.canPlayType) {
+                    done('problem');
+                } 
+
+                if (audio.canPlayType('audio/mpeg')) {
+                    audio.src = 'audio/intro.mp3';
+                } else if (audio.canPlayType('audio/ogg')) {
+                    audio.src = 'audio/intro.ogg';
+                    audio.preload = 'auto';
+                } else {
+                    done('problem');
+                    return;
+                }
+
+                document.body.appendChild(audio);
+
+                audio.addEventListener('canplaythrough', function () {
+                    audio.play();
+                    done('running');
+                }, false);
+
+            }());
+        </script
+    </body>
+</html>
