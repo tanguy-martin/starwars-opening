@@ -27,4 +27,4 @@ A bit of fun doing the famous crawling text of Starwars. Nothing really major he
 * http://leaverou.github.com/prefixfree/
 * ...more to come when I remember
 
-Feel free to report bugs or do pull requests if you judge it is necessarys
+Feel free to report bugs or do pull requests if you judge it is necessary
