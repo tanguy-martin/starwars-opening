@@ -3,6 +3,9 @@
 ## Basically
 A bit of fun doing the famous crawling text of Starwars. Nothing really major here, it uses transforms and animations from CSS3. I used Lea Verou's Prefixfree script (many thanks!) so I don't have to care about vendor prefixes (it is especially a pain with animations and keyframes). Audio is basic HTML5 with JS API
 
+## Demos
+Demos here: http://tanguymartin.com/demos/starwars-opening/
+
 ## More about it
 * The audio is preloaded with JavaScript and then when the browser is ready to play it, the animation starts. This prevent the animation to not be in sync with the audio.
 * I use "visibility: hidden" to hide the main "STARWARS" title at the begining. I originally used "opacity:0" and then put it back to the value 1 in the animation keyframe 0, but there is a bug in Chrome at the moment of writing whereby scaling transformations don't work when opacity is used.
