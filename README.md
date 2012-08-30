@@ -22,6 +22,7 @@ Demos here: http://tanguymartin.com/demos/starwars-opening/
 * On Firefox 14 and below, the crawling text is flickering. There is a workaround but I prefer to leave it as it is for now at least.
 * On Opera 12.01, the perspective is not applied to the crawling text. And it doesn't scroll at all.
 * On browser that don't support at all either the html5 audio or the css3 transforms/animations
+* Haven't tested it on mobiles but I'm pretty sure It won't work
 
 ## Resources used
 * MDN Documentation on CSS animations: https://developer.mozilla.org/en-US/docs/CSS/CSS_animations
@@ -29,5 +30,10 @@ Demos here: http://tanguymartin.com/demos/starwars-opening/
 * http://modernizr.com/
 * http://leaverou.github.com/prefixfree/
 * ...more to come when I remember
+
+## Todo
+* Clean the CSS code a bit
+* Put the JS code in a separate file if it grows to much
+* ...
 
 Feel free to report bugs or do pull requests if you judge it is necessary
