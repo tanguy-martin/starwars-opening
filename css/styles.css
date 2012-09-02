@@ -151,10 +151,10 @@ a {
   animation: scrolldown 7s 88s forwards;
 }
 .running .inner-txt {
-  animation: swtxt 288s 19s cubic-bezier(0.25, 0.25, 0.815, 0.995);
+  animation: swtxt 295s 18s cubic-bezier(0.25, 0.25, 0.815, 0.995);
 }
 .running #main-title {
-  animation: maintitle 12s 12.5s forwards;
+  animation: maintitle 12s 13s forwards;
 }
 .running #intro {
   animation: fadeoutIntro 8s 4s forwards;
@@ -232,12 +232,14 @@ a {
 .csstransforms3d #supported,
 .audio #supported,
 .running #supported,
+.problem #unsupported,
 #unsupported {
   display: block;
 }
 
 .csstransforms3d #unsupported,
 .audio #unsupported,
+.problem #supported,
 #supported {
   display: none;
 }
