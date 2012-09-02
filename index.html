@@ -8,15 +8,16 @@
     </head>
     <body>
         <div id="loading">Loading...</div>
+        <div class="bg">
+            <div class="deathstar"></div>
+        </div>
         <div id="supported">
-            <div class="bg">
-                <div class="deathstar"></div>
-            </div>
             <div id="main-title"><img src="images/logo.svg" /></div>
             <div class="box">   
-                <h1>STARWARS OPENING - CSS3 & HTML5</h1>
+                <h1>STARWARS OPENING CRAWL - CSS3 & HTML5</h1>
+                <a href="http://tanguymartin.com/starwars-opening-crawl-in-css3-and-html5/">Blog post</a><br />
                 <a href="https://github.com/tanguy-martin/starwars-opening">Github repository</a><br />
-                <a href="https://twitter.com/intent/tweet?text=Starwars%20opening%20animation%20in%20%23CSS3%20%26%20%23HTML5&url=http%3A%2F%2Ftanguymartin.com%2Fdemos%2Fstarwars-opening%2F&via=tanguy_martin" target="_blank">Tweet about it!</a>
+                <a href="https://twitter.com/intent/tweet?text=Starwars%20opening%20crawling%20text%20in%20%23CSS3%20%26%20%23HTML5&url=http%3A%2F%2Ftanguymartin.com%2Fdemos%2Fstarwars-opening%2F&via=tanguy_martin" target="_blank">Tweet about it</a>
             </div>
             <div id="wrapper">
                 <div id="intro">A long time ago, in a galaxy far, far, away....</div>
@@ -57,6 +58,7 @@
 
                 if (audio == null || !audio.canPlayType) {
                     done('problem');
+                    return;
                 } 
 
                 if (audio.canPlayType('audio/mpeg')) {
